@@ -219,3 +219,191 @@ section {
     font-size: 2.2rem;
 }
 }
+
+/* ── ABOUT ── */
+#about
+{
+    padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* two equal columns */
+    gap: var(--spacing-xl);
+    align-items: start;               /* align content to top */
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+}
+
+.about-text p {
+    color: var(--color-muted);
+    line-height: 1.9;
+    margin-bottom: var(--spacing-md);
+    font-size: 0.95rem;
+}
+
+.about-text p strong {
+color: var(--color-text);
+font-weight: 500;
+}
+
+/* Stats cards — 2x2 grid on the right side */
+.about-stats {
+display: grid;
+grid-template-columns: 1fr 1fr;   /* 2 columns */
+gap: var(--spacing-md);
+}
+
+.stat-card {
+border: 1px solid var(--color-border);
+padding: var(--spacing-lg);
+transition: border-color var(--transition);
+}
+
+.stat-card:hover {
+border-color: var(--color-accent);
+}
+
+.stat-number {
+font-size: 2.5rem;
+font-weight: 700;
+color: var(--color-accent);
+line-height: 1;
+margin-bottom: var(--spacing-sm);
+}
+
+.stat-label {
+font-size: 0.8rem;
+color: var(--color-muted);
+letter-spacing: 0.04em;
+}
+
+/* ── SKILLS ── */
+#skills {
+    padding: var(--spacing-xl) var(--spacing-lg);
+    max-width: 960px;
+    margin: 0 auto;        /* add this */
+}
+
+#skills h2 {
+font-size: 2rem;
+font-weight: 700;
+margin-bottom: var(--spacing-lg);
+}
+
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+gap: var(--spacing-md);
+}
+
+.skill-tag {
+border: 1px solid var(--color-border);
+padding: 0.75rem 1rem;
+font-size: 0.85rem;
+color: var(--color-muted);
+letter-spacing: 0.04em;
+transition: all var(--transition);
+display: flex;
+align-items: center;
+gap: 0.5rem;
+cursor: default;
+}
+
+.skill-tag::before {
+content: '';
+width: 6px;
+height: 6px;
+border-radius: 50%;
+background: var(--color-border);
+flex-shrink: 0;
+transition: background var(--transition);
+}
+
+.skill-tag:hover {
+border-color: var(--color-accent);
+color: var(--color-text);
+}
+
+.skill-tag:hover::before {
+background: var(--color-accent);
+}
+
+/* ── RESPONSIVE — About and Skills ── */
+@media (max-width: 768px) {
+.about-grid {
+grid-template-columns: 1fr;   /* stack vertically on mobile */
+}
+
+.about-stats {
+grid-template-columns: 1fr 1fr;  /* keep 2 columns on mobile */
+}
+}
+
+/* ── CONTACT ── */
+#contact {
+    padding: var(--spacing-xl) var(--spacing-lg);
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    max-width: 480px;
+}
+
+#contact input,
+#contact textarea {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    padding: 0.85rem 1rem;
+    outline: none;
+    transition: border-color var(--transition);
+    width: 100%;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: var(--color-accent);
+}
+
+#contact textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+#contact button {
+    background: var(--color-accent);
+    color: #0f0f0f;
+    border: none;
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.85rem;
+    cursor: pointer;
+    transition: opacity var(--transition);
+    align-self: flex-start;
+    padding: 0.85rem 2rem;
+}
+
+#contact button:hover {
+    opacity: 0.85;
+}
